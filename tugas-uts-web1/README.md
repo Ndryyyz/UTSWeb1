@@ -6,7 +6,7 @@
 | **NIM** | 312510181 |
 | **Kelas** | I251B |
 | **Program Studi** | Teknik Informatika, Universitas Pelita Bangsa |
-| **Mata Kuliah** | Pemrograman Web 1 |
+| **Mata Kuliah** | Pemrograman Web |
 
 ## Deskripsi Project
 
@@ -97,10 +97,3 @@ Pengguna memasukkan Nomor Delivery Order lalu menekan **Cari**. Hasilnya berupa 
 | Validasi form dan alert | Pesan error per kolom, `alert()` login gagal, `confirm()`, toast, dan modal |
 | Modularitas file | HTML, CSS, `script.js`, dan `data.js` terpisah; satu `script.js` dipakai semua halaman lewat atribut `data-page` |
 | Kreativitas tambahan | Tema BukuKu, jam lokal, ringkasan dashboard, timeline perjalanan paket, sampul cadangan otomatis, pengurangan stok, nomor DO otomatis |
-
-## Alur Berpikir Singkat (untuk video)
-
-1. Memetakan lima halaman dan data apa yang dibutuhkan masing-masing, lalu menyatukannya dalam `data.js`.
-2. Membuat kerangka HTML semantik dan gaya dasar di `style.css`.
-3. Menulis fungsi pembantu bersama (format rupiah, modal, validasi, toast) di `script.js`.
-4. Membuat fungsi `init` per halaman, lalu menguji seluruh alur dari login sampai tracking.
