@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pelacakan pengiriman pesanan buku BukuKu">
+  <title>Tracking Pengiriman - BukuKu</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+  <header class="site-header">
+    <div class="brand">&#128218; Buku<span>Ku</span></div>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html" class="active">Tracking</a>
+      <a href="#" id="btn-logout">Keluar (<span id="nama-user"></span>)</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Informasi Pengiriman</h1>
+    <p class="subtitle">Masukkan Nomor Delivery Order (contoh: 20230012).</p>
+
+    <section class="card">
+      <form id="form-tracking" novalidate>
+        <div class="form-group">
+          <label for="nomor">Nomor Delivery Order</label>
+          <input id="nomor" name="nomor" placeholder="20230012">
+          <div class="error-msg"></div>
+        </div>
+        <button type="submit" class="btn">Cari</button>
+      </form>
+    </section>
+
+    <section id="hasil-tracking" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 BukuKu - UTS Pemrograman Web 1</footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

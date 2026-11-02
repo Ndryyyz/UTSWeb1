@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Informasi stok dan katalog buku BukuKu">
+  <title>Stok &amp; Katalog - BukuKu</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+  <header class="site-header">
+    <div class="brand">&#128218; Buku<span>Ku</span></div>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html" class="active">Katalog</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+      <a href="#" id="btn-logout">Keluar (<span id="nama-user"></span>)</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Informasi Stok / Katalog</h1>
+    <p class="subtitle">Data dimuat dari <code>dataKatalogBuku</code> pada <code>js/data.js</code>. Total judul: <strong id="jumlah-judul">0</strong></p>
+
+    <section class="card" aria-label="Daftar buku">
+      <div class="toolbar">
+        <input type="search" id="cari-buku" placeholder="Cari nama / kode buku..." aria-label="Cari buku">
+        <select id="filter-kategori" aria-label="Filter kategori"><option value="">Semua jenis</option></select>
+        <button type="button" class="btn" data-open="modal-tambah">+ Tambah Stok Baru</button>
+        <button type="button" class="btn btn-outline" id="btn-reset-data">Reset Data</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption class="subtitle" style="text-align:left">Stok buku saat ini</caption>
+          <thead>
+            <tr><th>Sampul</th><th>Kode</th><th>Nama Barang</th><th>Jenis</th><th>Edisi</th><th>Harga</th><th>Stok</th><th>Aksi</th></tr>
+          </thead>
+          <tbody id="tbody-stok"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal tambah stok -->
+  <div class="modal" id="modal-tambah" role="dialog" aria-modal="true" aria-labelledby="jt">
+    <div class="modal-box">
+      <div class="modal-head"><h2 id="jt">Tambah Stok Baru</h2><button class="modal-close" data-close="modal-tambah" aria-label="Tutup">&times;</button></div>
+      <form id="form-tambah" novalidate>
+        <div class="form-row">
+          <div class="form-group"><label for="t-kode">Kode barang</label><input id="t-kode" name="kode" placeholder="EKMA4999"><div class="error-msg"></div></div>
+          <div class="form-group"><label for="t-jenis">Jenis barang</label><input id="t-jenis" name="jenis" placeholder="Buku Ajar" value="Buku Ajar"><div class="error-msg"></div></div>
+        </div>
+        <div class="form-group"><label for="t-nama">Nama barang</label><input id="t-nama" name="nama"><div class="error-msg"></div></div>
+        <div class="form-row">
+          <div class="form-group"><label for="t-edisi">Edisi</label><input type="number" id="t-edisi" name="edisi" min="1"><div class="error-msg"></div></div>
+          <div class="form-group"><label for="t-harga">Harga (Rp)</label><input type="number" id="t-harga" name="harga" min="1"><div class="error-msg"></div></div>
+          <div class="form-group"><label for="t-stok">Stok</label><input type="number" id="t-stok" name="stok" min="0"><div class="error-msg"></div></div>
+        </div>
+        <button type="submit" class="btn btn-block">Simpan</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">&copy; 2026 BukuKu - UTS Pemrograman Web 1</footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

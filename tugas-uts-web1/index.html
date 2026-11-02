@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Halaman login aplikasi pemesanan buku BukuKu">
+  <title>Login - BukuKu</title>
+  <link rel="icon" type="image/png" href="assets/Logo Toko Buku Ku.jpg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body" data-page="login">
+  <main class="login-card">
+    <header>
+      <h1>&#128218; Buku<span style="color:#f59e0b">Ku</span></h1>
+      <p class="subtitle">Masuk untuk memesan buku favoritmu</p>
+    </header>
+
+    <form id="form-login" novalidate>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="contoh: rina@gmail.com" autocomplete="username">
+        <div class="error-msg"></div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Masukkan password" autocomplete="current-password">
+        <div class="error-msg"></div>
+      </div>
+      <button type="submit" class="btn btn-block">Login</button>
+    </form>
+
+    <div class="login-links">
+      <button type="button" class="link-btn" data-open="modal-lupa">Lupa Password</button>
+      <button type="button" class="link-btn" data-open="modal-daftar">Daftar</button>
+    </div>
+    <p class="hint">Akun uji: <strong>rina@gmail.com</strong> / <strong>rina123</strong></p>
+  </main>
+
+  <!-- Modal Lupa Password -->
+  <div class="modal" id="modal-lupa" role="dialog" aria-modal="true" aria-labelledby="judul-lupa">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="judul-lupa">Lupa Password</h2>
+        <button class="modal-close" data-close="modal-lupa" aria-label="Tutup">&times;</button>
+      </div>
+      <form id="form-lupa" novalidate>
+        <div class="form-group">
+          <label for="lupa-email">Email terdaftar</label>
+          <input type="email" id="lupa-email" name="email" placeholder="email@contoh.com">
+          <div class="error-msg"></div>
+        </div>
+        <button type="submit" class="btn btn-block">Kirim Tautan Reset</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Daftar -->
+  <div class="modal" id="modal-daftar" role="dialog" aria-modal="true" aria-labelledby="judul-daftar">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="judul-daftar">Daftar Akun Baru</h2>
+        <button class="modal-close" data-close="modal-daftar" aria-label="Tutup">&times;</button>
+      </div>
+      <form id="form-daftar" novalidate>
+        <div class="form-group">
+          <label for="d-nama">Nama lengkap</label>
+          <input type="text" id="d-nama" name="nama">
+          <div class="error-msg"></div>
+        </div>
+        <div class="form-group">
+          <label for="d-email">Email</label>
+          <input type="email" id="d-email" name="email">
+          <div class="error-msg"></div>
+        </div>
+        <div class="form-group">
+          <label for="d-pass">Password</label>
+          <input type="password" id="d-pass" name="password" autocomplete="new-password">
+          <div class="error-msg"></div>
+        </div>
+        <div class="form-group">
+          <label for="d-ulang">Ulangi password</label>
+          <input type="password" id="d-ulang" name="ulang" autocomplete="new-password">
+          <div class="error-msg"></div>
+        </div>
+        <button type="submit" class="btn btn-block">Daftar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

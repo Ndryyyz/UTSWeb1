@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard menu utama aplikasi BukuKu">
+  <title>Dashboard - BukuKu</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS internal: khusus kartu ringkasan di halaman dashboard -->
+  <style>
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .summary .item { background: #fff; border-left: 5px solid var(--accent); border-radius: 12px; padding: 16px 18px; box-shadow: var(--shadow); }
+    .summary .angka { font-size: 1.8rem; font-weight: 700; color: var(--primary-dark); }
+  </style>
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="brand">&#128218; Buku<span>Ku</span></div>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="stok.html">Katalog</a>
+      <a href="checkout.html">Pemesanan</a>
+      <a href="tracking.html">Tracking</a>
+      <a href="#" id="btn-logout">Keluar (<span id="nama-user"></span>)</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 id="greeting">Halo!</h1>
+      <p id="jam-lokal" class="subtitle"></p>
+      <p>Peran akun: <span class="badge badge-info" id="peran-user">User</span></p>
+      <p>Pilih menu di bawah untuk mengelola pemesanan buku.</p>
+    </section>
+
+    <section class="summary" aria-label="Ringkasan">
+      <div class="item"><div class="angka" id="sum-judul">0</div>Judul buku</div>
+      <div class="item"><div class="angka" id="sum-stok">0</div>Total stok</div>
+      <div class="item"><div class="angka" id="sum-pesanan">0</div>Total transaksi</div>
+    </section>
+
+    <section aria-label="Menu utama">
+      <div class="grid grid-4">
+        <a class="menu-card" href="stok.html"><span class="icon">&#128214;</span><strong>Informasi Stok / Katalog</strong><small>Lihat &amp; tambah stok buku</small></a>
+        <a class="menu-card" href="tracking.html"><span class="icon">&#128666;</span><strong>Tracking Pengiriman</strong><small>Lacak nomor Delivery Order</small></a>
+        <button type="button" class="menu-card" data-open="modal-laporan"><span class="icon">&#128202;</span><strong>Laporan Pemesanan</strong><small>Rekap pesanan per ekspedisi</small></button>
+        <button type="button" class="menu-card" data-open="modal-riwayat"><span class="icon">&#128221;</span><strong>History Transaksi</strong><small>Semua transaksi tercatat</small></button>
+      </div>
+      <p style="margin-top:18px"><a class="btn" href="checkout.html">+ Buat Pemesanan Baru</a></p>
+    </section>
+  </main>
+
+  <!-- Modal Laporan Pemesanan -->
+  <div class="modal" id="modal-laporan" role="dialog" aria-modal="true" aria-labelledby="jl">
+    <div class="modal-box">
+      <div class="modal-head"><h2 id="jl">Laporan Pemesanan</h2><button class="modal-close" data-close="modal-laporan" aria-label="Tutup">&times;</button></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Ekspedisi</th><th>Jumlah Pesanan</th><th>Total Nilai</th></tr></thead>
+          <tbody id="tbody-laporan"></tbody>
+        </table>
+      </div>
+      <p class="total-box">Total: <span id="total-laporan"></span></p>
+    </div>
+  </div>
+
+  <!-- Modal History Transaksi -->
+  <div class="modal" id="modal-riwayat" role="dialog" aria-modal="true" aria-labelledby="jr">
+    <div class="modal-box wide">
+      <div class="modal-head"><h2 id="jr">History Transaksi</h2><button class="modal-close" data-close="modal-riwayat" aria-label="Tutup">&times;</button></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>No. DO</th><th>Tgl Kirim</th><th>Pemesan</th><th>Ekspedisi</th><th>Paket</th><th>Total</th><th>Status</th></tr></thead>
+          <tbody id="tbody-riwayat"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">&copy; 2026 BukuKu - UTS Pemrograman Web 1</footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
