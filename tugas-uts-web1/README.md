@@ -8,13 +8,6 @@
 | **Program Studi** | Teknik Informatika, Universitas Pelita Bangsa |
 | **Mata Kuliah** | Pemrograman Web 1 |
 
-## Link Pengumpulan
-
-- **Repository GitHub:** https://github.com/USERNAME/tugas-uts-web1  *(ganti dengan link repository Anda)*
-- **Video Penjelasan YouTube:** https://youtu.be/ID_VIDEO  *(ganti dengan link video Anda, durasi maksimal 15 menit)*
-
-> Pastikan repository berstatus **Public** dan video YouTube berstatus **Public/Unlisted** (bisa dibuka tanpa login).
-
 ## Deskripsi Project
 
 BukuKu adalah aplikasi web front-end sederhana untuk pemesanan buku pada toko online. Seluruh data (katalog, pengguna, pengiriman, riwayat) diambil dari variabel JavaScript pada `js/data.js` berformat Array JSON, tanpa server atau database. Data yang berubah saat aplikasi dipakai (stok baru, pesanan, akun terdaftar) disimpan di `localStorage` browser agar tetap ada ketika berpindah halaman.
